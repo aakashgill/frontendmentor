@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Social links profile</title>
+  <style>
+    :root {
+      --color-white: hsl(0, 0%, 100%);
+      --color-black: hsl(0, 0%, 8%);
+      --color-grey: hsl(0, 0%, 20%);
+      --color-grey-2: hsl(0, 0%, 12%);
+      --color-green: hsl(75, 94%, 57%);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+    body {
+      background-color: var(--color-black);
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .container {
+      max-width: 1280px;
+      padding: 0 20px;
+      margin: 0 auto;
+    }
+    .card-container {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+    .card {
+      width: 380px;
+      padding: 50px 40px;
+      background-color: var(--color-grey-2);
+      color: var(--color-white);
+      border-radius: 14px;
+      text-align: center;
+    }
+    .card-image {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    .card-heading {
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .card-location {
+      color: var(--color-green);
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+    .card-description {
+      font-size: 14px;
+      color: var(--color-white);
+      opacity: 0.8;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    .card-links {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .card-link {
+      display: block;
+      padding: 14px 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      background-color: var(--color-grey);
+      color: var(--color-white);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all .3s;
+      &:hover {
+        background-color: var(--color-green);
+        color: var(--color-black);
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .card {
+        padding: 20px;
+        width: auto;
+      }
+    }
+
+    .attribution {
+      padding: 20px;
+      color: #fff;
+      a {
+        color: inherit;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="container">
+      <div class="card-container">
+        <div class="card">
+          <img width="80" height="80" class="card-image" src="./assets/images/avatar-jessica.jpeg" alt="Jessica Avatar">
+          <h1 class="card-heading">Jessica Randall</h1>
+          <p class="card-location">London, United Kingdom</p>
+          <p class="card-description">"Front-end developer and avid reader."</p>
+
+          <ul class="card-links">
+            <li>
+              <a href="#" class="card-link">Github</a>
+            </li>
+            <li>
+              <a href="#" class="card-link">Frontend Mentor</a>
+            </li>
+            <li>
+              <a href="#" class="card-link">LinkedIn</a>
+            </li>
+            <li>
+              <a href="#" class="card-link">Twitter</a>
+            </li>
+            <li>
+              <a href="#" class="card-link">Instagram</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a target="_blank" href="https://aakashgill.in">Aakash</a>.
+    </div>
+  </main>
+</body>
+</html>
