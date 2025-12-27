@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Article preview component</title>
+  <style>
+    :root {
+      --color-white: hsl(0, 0%, 100%);
+      --color-black: hsl(0, 0%, 7%);
+      --color-grey-blue: hsl(212, 23%, 69%);
+      --color-light-grey-blue: hsl(210, 46%, 95%);
+      --color-dark-grey-blue: hsl(214, 17%, 51%);
+      --color-dark-grey-blue-2: hsl(217, 19%, 35%);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Figtree", sans-serif;
+    }
+    body {
+      font-family: "Manrope", sans-serif;
+      background-color: var(--color-light-grey-blue);
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .container {
+      max-width: 1280px;
+      padding: 0 20px;
+      margin: 0 auto;
+    }
+    .card-container {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+    .card {
+      display: flex;
+      max-width: 800px;
+    }
+    .card-img {
+      width: 44%;
+      object-fit: cover;
+    }
+    .card-content {
+      background-color: var(--color-white);
+      padding: 30px 40px;
+    }
+    .card-heading {
+      font-size: 20px;
+      color: var(--color-dark-grey-blue-2);
+      margin-bottom: 20px;
+    }
+    .card-description {
+      font-size: 14px;
+      color: var(--color-dark-grey-blue);
+    }
+    .card-author {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 12px;
+    }
+    .card-author-img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .card-author-name {
+      font-weight: 600;
+      color: var(--color-dark-grey-blue);
+    }
+    .card-author-date {
+      display: block;
+      margin-top: 3px;
+      color: var(--color-grey-blue);
+    }
+    .card-footer {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .share {
+      position: relative;
+    }
+    .share-icon {
+      width: 20px;
+      height: 20px;
+      &:hover {
+        +.share-tooltip {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      
+    }
+    .share-tooltip {
+      position: absolute;
+      width: 180px;
+      background-color: var(--color-dark-grey-blue-2);
+      padding: 10px 20px;
+      color: var(--color-white);
+      left: -80px;
+      top: -50px;
+      font-size: 14px;
+      border-radius: 6px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .4s ease;
+      &:hover {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    .share-tooltip-triangle {
+      display: block;
+      width: 0;
+      height: 0;
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: var(--color-dark-grey-blue-2);
+    }
+    .share-tooltip-title {
+      margin-right: 5px;
+      display: block;
+    }
+    .share-tooltip-items {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .share-tooltip-link {
+      display: block;
+    }
+
+    @media screen and (max-width: 600px) {
+      body {
+        background-color: var(--color-white);
+      }
+      .card-container {
+        display: block;
+      }
+      .card {
+        flex-direction: column;
+      }
+      .card-img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+      .container {
+        padding: 0;
+      }
+      .card-footer {
+        flex-direction: column;
+      }
+      .card-author {
+        display: none;
+      }
+      .share-icon {
+        display: none;
+      }
+      .share {
+        width: 100%;
+      }
+      .card-footer {
+        margin: 20px -40px;
+      }
+      .share-tooltip {
+        position: fixed;
+        inset: 0;
+        top: auto;
+        opacity: 1;
+        visibility: visible;
+        background-color: var(--color-dark-grey-blue-2);
+        width: 100%;
+        padding: 20px;
+        border-radius: 0;
+      }
+      .share-tooltip-triangle {
+        display: none;
+      }
+    }
+   
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="card-container">
+      <div class="card">
+        <img class="card-img" src="./images/drawers.jpg" alt="an image of drawer">
+        <div class="card-content">
+          <h1 class="card-heading">Shift the overall look and feel by adding these wonderful touches to furniture in your home</h1>
+          <p class="card-description">
+            Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I’ve got some simple tips to help you make any room feel complete.
+          </p>
+          
+          <div class="card-footer">
+            <div class="card-author">
+              <img class="card-author-img" width="40" height="40" src="./images/avatar-michelle.jpg" alt="">
+              <div>
+                <span class="card-author-name">Michelle Appleton</span>
+                <time class="card-author-date" datetime="2020, June 28">28 Jun 2020</time>
+              </div>
+            </div>
+
+            <div class="share">
+              <div class="share-icon">
+                <img src="./images/icon-share.svg" alt="">
+              </div>
+              <div class="share-tooltip">
+                <span class="share-tooltip-triangle"></span>
+                <div class="share-tooltip-items">
+                  <span class="share-tooltip-title">Share</span>
+                  <a class="share-tooltip-link" href="#">
+                    <img width="20" src="./images/icon-facebook.svg" alt="">
+                  </a>
+                  <a class="share-tooltip-link" href="#">
+                    <img width="20" src="./images/icon-twitter.svg" alt="">
+                  </a>
+                  <a class="share-tooltip-link" href="#">
+                    <img width="20" src="./images/icon-pinterest.svg" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
