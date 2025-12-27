@@ -156,6 +156,10 @@ body {
 @media screen and (max-width: 750px) {
   body {
     display: block;
+    padding: 0;
+  }
+  .newsletter-success {
+    min-height: 100vh;
   }
   .newsletter-container {
     flex-direction: column-reverse;
