@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --green-400: hsl(172, 67%, 45%);
+  --green-900: hsl(183, 100%, 15%);
+  --grey-500: hsl(186, 14%, 43%);
+  --grey-400: hsl(184, 14%, 56%);
+  --grey-200: hsl(185, 41%, 84%);
+  --grey-50: hsl(189, 47%, 97%);
+  --white: hsl(0, 100%, 100%);
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  background-color: var(--grey-200);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 920px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.title {
+  color: var(--green-900);
+  font-size: 1.5rem;
+  letter-spacing: 0.5rem;
+  text-align: center;
+}
+
+.calculator-card {
+  background-color: var(--white);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Section */
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.input-group label {
+  color: var(--grey-500);
+  font-size: 0.875rem;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  z-index: 1;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 2.5rem;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--green-900);
+  background-color: var(--grey-50);
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  text-align: right;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-wrapper input:focus {
+  border-color: var(--green-400);
+}
+
+.input-wrapper input::placeholder {
+  color: var(--grey-400);
+}
+
+/* Tip Buttons */
+.tip-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 140px);
+  gap: 1rem;
+}
+
+.tip-btn {
+  padding: 0.5rem 1.5rem;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--white);
+  background-color: var(--green-900);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.tip-btn:hover {
+  background-color: var(--green-400);
+  color: var(--green-900);
+}
+
+.tip-btn.custom {
+  background-color: var(--grey-50);
+  color: var(--grey-500);
+  text-align: center;
+}
+
+.tip-btn.custom:hover {
+  background-color: var(--grey-200);
+}
+.custom-btn-wrapper {
+  position: relative;
+}
+.custom-input {
+  position: absolute;
+  inset: 0;
+  display: none;
+}
+
+/* Output Section */
+.output-section {
+  background-color: var(--green-900);
+  border-radius: 1rem;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.result-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.result-label span:first-child {
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.result-subtitle {
+  color: var(--grey-400);
+  font-size: 0.8125rem;
+}
+
+.result-value {
+  color: var(--green-400);
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.reset-btn {
+  width: 100%;
+  padding: 0.75rem;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--green-900);
+  background-color: var(--green-400);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-transform: uppercase;
+  margin-top: auto;
+}
+
+.reset-btn:hover {
+  background-color: var(--grey-200);
+}
+
+.reset-btn:disabled {
+  background-color: hsl(183, 100%, 20%);
+  color: hsl(183, 100%, 10%);
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+/* Attribution */
+.attribution {
+  margin-top: 2rem;
+  font-size: 0.75rem;
+  text-align: center;
+  color: var(--grey-500);
+}
+
+.attribution a {
+  color: var(--green-900);
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  color: var(--green-400);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .calculator-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+    letter-spacing: 0.375rem;
+  }
+
+  .tip-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .result-value {
+    font-size: 2rem;
+  }
+
+  .output-section {
+    padding: 1.5rem;
+  }
+}
+
