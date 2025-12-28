@@ -1,6 +1,11 @@
 (function() {
   let fetchedData = [];
   const dashboardStatsEl = document.getElementById("dashboard-stats");
+  const timeframeText = {
+    daily: "Yesterday",
+    weekly: "Last Week",
+    monthly: "Last Month",
+  };
 
   async function fetchAndSaveData() {
     const response = await fetch('./data.json');
@@ -12,6 +17,7 @@
     let finalHTML = '';
     fetchedData.map(data => {
       let className = data.title.toLowerCase().replace(" ", "-");
+      let timeFrameText = timeframeText[currentStat];
 
       finalHTML += `
         <div class="stats-container stats-${className}">
@@ -19,7 +25,7 @@
             <div class="stats-name">${data.title}</div>
             <div class="stats-numbers">
               <div class="stats-hrs">${data.timeframes[currentStat].current}hrs</div>
-              <div class="stats-last-week">Last Week - ${data.timeframes[currentStat].previous}hrs</div>
+              <div class="stats-last-week">${timeFrameText} - ${data.timeframes[currentStat].previous}hrs</div>
             </div>
           </div>
         </div>
