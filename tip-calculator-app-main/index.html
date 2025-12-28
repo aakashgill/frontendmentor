@@ -20,33 +20,37 @@
           <label for="bill">Bill</label>
           <div class="input-wrapper">
             <img src="./images/icon-dollar.svg" alt="dollar icon" class="input-icon">
-            <input type="number" id="bill" placeholder="0" min="0" step="0.01">
+            <input type="number" id="bill" placeholder="0" min="0" step="0.1">
           </div>
         </div>
 
         <div class="input-group">
           <label>Select Tip %</label>
           <div class="tip-buttons">
-            <button class="tip-btn" data-tip="5">5%</button>
-            <button class="tip-btn" data-tip="10">10%</button>
-            <button class="tip-btn" data-tip="15">15%</button>
-            <button class="tip-btn" data-tip="25">25%</button>
-            <button class="tip-btn" data-tip="50">50%</button>
+            <button type="button" class="tip-btn" data-tip="5">5%</button>
+            <button type="button" class="tip-btn" data-tip="10">10%</button>
+            <button type="button" class="tip-btn" data-tip="15">15%</button>
+            <button type="button" class="tip-btn" data-tip="25">25%</button>
+            <button type="button" class="tip-btn" data-tip="50">50%</button>
             <div class="custom-btn-wrapper">
-              <button class="tip-btn custom js-custom-btn">Custom</button>
+              <button type="button" class="tip-btn custom js-custom-btn">Custom</button>
               <div class="input-wrapper custom-input">
-                <input type="number">
+                <input type="number" id="custom-input-tip" min="0" placeholder="0" step="0.1">
               </div>
             </div>
           </div>
         </div>
 
         <div class="input-group">
-          <label for="people">Number of People</label>
+          <div class="people-label-container">
+            <label for="people">Number of People</label>
+            <span class="validation-zero">Can't be zero</span>
+          </div>
           <div class="input-wrapper">
             <img src="./images/icon-person.svg" alt="person icon" class="input-icon">
             <input type="number" id="people" placeholder="0" min="1" step="1">
           </div>
+          
         </div>
       </div>
 
@@ -56,7 +60,7 @@
             <span>Tip Amount</span>
             <span class="result-subtitle">/ person</span>
           </div>
-          <div class="result-value">$0.00</div>
+          <div id="tip-pp" class="result-value">$0.00</div>
         </div>
 
         <div class="result-item">
@@ -64,10 +68,10 @@
             <span>Total</span>
             <span class="result-subtitle">/ person</span>
           </div>
-          <div class="result-value">$0.00</div>
+          <div id="total-pp" class="result-value">$0.00</div>
         </div>
 
-        <button class="reset-btn">RESET</button>
+        <button id="reset-btn" class="reset-btn">Reset</butto>
       </div>
     </div>
   </div>

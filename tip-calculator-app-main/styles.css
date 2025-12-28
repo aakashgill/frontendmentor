@@ -11,6 +11,7 @@
   --grey-400: hsl(184, 14%, 56%);
   --grey-200: hsl(185, 41%, 84%);
   --grey-50: hsl(189, 47%, 97%);
+  --color-red: hsl(0, 80%, 45%);
   --white: hsl(0, 100%, 100%);
 }
 
@@ -100,12 +101,22 @@ body {
   transition: border-color 0.2s;
 }
 
-.input-wrapper input:focus {
+.input-wrapper input:focus,
+.input-wrapper input:hover {
   border-color: var(--green-400);
 }
 
 .input-wrapper input::placeholder {
   color: var(--grey-400);
+}
+.people-label-container {
+  display: flex;
+  justify-content: space-between;
+}
+.validation-zero {
+  display: none;
+  color: var(--color-red);
+  font-size: 14px;
 }
 
 /* Tip Buttons */
@@ -128,9 +139,14 @@ body {
   transition: background-color 0.2s, color 0.2s;
 }
 
+.tip-btn--active,
 .tip-btn:hover {
   background-color: var(--green-400);
   color: var(--green-900);
+}
+.input-wrapper .input--error,
+.input-wrapper .input--error:focus {
+  border: 1px solid var(--color-red);
 }
 
 .tip-btn.custom {
