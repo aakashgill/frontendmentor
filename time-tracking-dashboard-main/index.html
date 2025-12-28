@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <title>Frontend Mentor | Time tracking dashboard</title>
+</head>
+<body>
+  <main>
+    <div class="container">
+      <div class="dashboard">
+        <div class="dashboard-name">
+          <div class="person-pill">
+            <div class="person">
+              <img width="80" height="80" class="person-image" src="./images/image-jeremy.png" alt="">
+              <div class="person-info">
+                <div class="person-report-label">Report for</div>
+                <h1 class="person-name">Jeremy Robson</h1>
+              </div>
+            </div>
+          </div>
+          <div class="button-container">
+            <button data-btn-stat="daily" type="button" class="btn">Daily</button>
+            <button data-btn-stat="weekly" type="button" class="btn btn--active">Weekly</button>
+            <button data-btn-stat="monthly" type="button" class="btn">Monthly</button>
+          </div>
+        </div>
+        <div class="dashboard-stats" id="dashboard-stats">
+          
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a target="_blank" href="https://aakashgill.in/?utm_source=frontendmentor">Aakash</a>.
+    </div>
+  </main>
+  <script src="./script.js"></script>
+</body>
+</html>

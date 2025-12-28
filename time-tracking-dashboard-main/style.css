@@ -1,0 +1,196 @@
+:root {
+  --color-orange-300-work: hsl(15, 100%, 70%);
+  --color-blue-300-play: hsl(195, 74%, 62%);
+  --color-pink-400-study: hsl(348, 100%, 68%);
+  --color-green-400-exercise: hsl(145, 58%, 55%);
+  --color-purple-700-social: hsl(264, 64%, 52%);
+  --color-yellow-300-self-care: hsl(43, 84%, 65%);
+
+  --color-navy-950: hsl(226, 43%, 10%);
+  --color-navy-900: hsl(235, 46%, 20%);
+  --color-purple-500: hsl(235, 45%, 61%);
+  --color-navy-200: hsl(236, 100%, 87%);
+  --color-blue: hsl(246, 80%, 60%);
+  --color-white: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: var(--color-navy-950);
+  color: var(--color-white);
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.container {
+  max-width: 1280px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.dashboard {
+  padding: 50px;
+  display: flex;
+  gap: 10px;
+}
+.dashboard-name {
+  max-width: 250px;
+  background-color: var(--color-navy-900);
+  border-radius: 20px;
+  overflow: hidden;
+}
+.person-pill {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  padding: 30px;
+  border-radius: 20px;
+}
+.button-container {
+  background-color: var(--color-navy-900);
+  color: var(--color-white);
+  padding: 30px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  gap: 5px;
+}
+.btn {
+  background: none;
+  border: none;
+  color: var(--color-navy-200);
+  font-size: 14px;
+  width: 100%;
+  text-align: left;
+  padding: 5px 0;
+  cursor: pointer;
+  &:hover {
+    color: var(--color-white);
+  }
+}
+.btn--active {
+  color: var(--color-white);
+}
+.person-report-label {
+  margin-top: 30px;
+  font-size: 12px;
+  color: var(--color-navy-200);
+}
+.person-image {
+  border: 2px solid var(--color-white);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+.person-name {
+  margin-top: 5px;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.dashboard-stats {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.stats-container {
+  padding: 20px;
+  background-repeat: no-repeat;
+  background-position: top right;
+  border-radius: 20px;
+  position: relative;
+}
+.stats-work {
+  background-color: var(--color-orange-300-work);
+  background-image: url('./images/icon-work.svg');
+}
+.stats-play {
+  background-color: var(--color-blue-300-play);
+  background-image: url('./images/icon-play.svg');
+}
+.stats-study {
+  background-color: var(--color-pink-400-study);
+  background-image: url('./images/icon-study.svg');
+}
+.stats-exercise {
+  background-color: var(--color-green-400-exercise);
+  background-image: url('./images/icon-exercise.svg');
+}
+.stats-social {
+  background-color: var(--color-purple-700-social);
+  background-image: url('./images/icon-social.svg');
+}
+.stats-self-care {
+  background-color: var(--color-yellow-300-self-care);
+  background-image: url('./images/icon-self-care.svg');
+}
+.stats {
+  background-color: var(--color-navy-900);
+  position: absolute;
+  inset: 0;
+  top: 40px;
+  padding: 20px;
+  border-radius: 20px;
+}
+.stats-name {
+  font-size: 14px;
+}
+.stats-hrs {
+  font-size: 40px;
+  margin-top: 20px;
+}
+.stats-last-week {
+  margin-top: 5px;
+  font-size: 12px;
+  color: var(--color-navy-200);
+}
+.attribution {
+  padding: 20px 50px;
+  a {
+    color: var(--color-white);
+  }
+}
+@media screen and (max-width: 1023px) {
+  .dashboard {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .dashboard-stats {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .stats-container {
+    height: 170px;
+  }
+  .stats-hrs {
+    font-size: 30px;
+    margin-top: 0;
+  }
+  .stats-numbers {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .button-container {
+    flex-direction: row;
+  }
+  .dashboard-name {
+    max-width: 100%;
+  }
+  .person {
+    display: flex;
+    gap: 10px;
+  }
+  .person-report-label {
+    margin-top: 10px;
+  }
+}
