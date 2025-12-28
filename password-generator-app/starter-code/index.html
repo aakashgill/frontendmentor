@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <title>Frontend Mentor | Password generator app</title>
+</head>
+<body>
+  <main>
+    <div class="container">
+      <h1 class="main-heading">Password Generator</h1>
+      <div class="password-container">
+        <div class="password">
+          <span id="final-password">PTxasd12</span>
+          <button class="btn-copy" type="button" id="btn-copy">
+            <img src="./assets/images/icon-copy.svg" alt="Copy">
+          </button>
+          <div class="copied-text" id="copied-text">Copied</div>
+        </div>
+        <form class="password-config" id="password-generator-form">
+          <div class="password-length">
+            <span>Character Length</span>
+            <span class="password-length-number" id="character-length">6</span>
+          </div>
+          
+          <input type="range" class="password-range" id="password-range" value="6" min="4" max="25" name="range">
+
+          <label class="password-label">
+            <input type="checkbox" name="uppercase">
+            <span>Include Uppercase Letters</span>
+          </label>
+          <label class="password-label">
+            <input type="checkbox" name="lowercase">
+            <span>Include Lowercase Letters</span>
+          </label>
+          <label class="password-label">
+            <input type="checkbox" name="numbers">
+            <span>Include Numbers</span>
+          </label>
+          <label class="password-label">
+            <input type="checkbox" name="symbols">
+            <span>Include Symbols</span>
+          </label>
+
+          <div class="password-strength">
+            <span class="password-strength-text">Strength</span>
+            <div class="strength-bar-meter">
+              <span class="strength-bar-meter-text" id="strength-bar-meter-text">Weak</span>
+              <span class="password-strength-bar">
+                <span class="strength-bar strength-bar--active"></span>
+                <span class="strength-bar"></span>
+                <span class="strength-bar"></span>
+                <span class="strength-bar"></span>
+              </span>
+            </div>
+          </div>
+
+          <button class="btn" type="submit">
+            Generate
+            <img src="./assets/images/icon-arrow-right.svg" alt="">
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a target="_blank" href="https://aakashgill.in?utm_source=frontendmentor">Aakash</a>.
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
