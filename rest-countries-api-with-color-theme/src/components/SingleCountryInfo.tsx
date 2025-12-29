@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
-function SingleCountryInfo(props) {
+function SingleCountryInfo(props:any) {
   const {countryInfo} = props;
   console.log(props);
   const { flags, name, capital, region, subregion, population, borders, languages, currencies, tld } = countryInfo[0];
 
-  const [borderNames, setBorderNames] = useState([]);
+  const [borderNames, setBorderNames] = useState<React.ReactNode[]>([]);
 
   useEffect(() => {
     if (!borders?.length) return;

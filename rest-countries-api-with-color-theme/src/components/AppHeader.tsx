@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Header() {
+function AppHeader() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   function setDarkTheme() {
@@ -23,4 +23,4 @@ function Header() {
     </header>
   )
 }
-export default Header;
+export default AppHeader;

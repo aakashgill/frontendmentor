@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
-import Header from "./components/header";
+import AppHeader from "./components/AppHeader";
 import CountryInfo from "./components/CountryInfo";
 import SingleCountryInfo from "./components/SingleCountryInfo";
 
 const countryFetchURL = "https://restcountries.com/v3.1/all?fields=name,flags,cca3,capital,region,population";
 
 function App() {
-  const [allCountries, setAllCountries] = useState([]);
-  const [country, setCountry] = useState([]);
-  const [selectedCountry, setSelectedCountry] = useState(null);
+  const [allCountries, setAllCountries] = useState<any[]>([]);
+  const [country, setCountry] = useState<any[]>([]);
+  const [selectedCountry, setSelectedCountry] = useState<any | null>(null);
 
   useEffect(() => {
     fetch(countryFetchURL)
@@ -19,7 +19,7 @@ function App() {
       });
   }, []);
 
-  function filterByRegion(e) {
+  function filterByRegion(e:React.ChangeEvent<HTMLSelectElement>) {
     const selectedRegion = e.target.value.toLowerCase();
     if(selectedRegion === "") {
       setCountry(allCountries);
@@ -33,7 +33,7 @@ function App() {
 
   }
 
-  function fetchCountryInfo(cca3) {
+  function fetchCountryInfo(cca3: any) {
     const specificCountryURL = `https://restcountries.com/v3.1/alpha/${cca3}`;
     fetch(specificCountryURL)
       .then(country => country.json())
@@ -44,7 +44,7 @@ function App() {
     setSelectedCountry(null);
   }
 
-  function searchCountry(e) {
+  function searchCountry(e: React.ChangeEvent<HTMLInputElement>) {
     const inputValue = e.target.value.toLowerCase();
 
     if (inputValue === "") {
@@ -63,7 +63,7 @@ function App() {
 
   return (
     <>
-      <Header/>
+      <AppHeader/>
       
       <div className='search'>
         <div className='container'>
